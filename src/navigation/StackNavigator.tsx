@@ -5,7 +5,7 @@ import { View } from 'react-native'
 
 import useColorScheme from '../hooks/useColorScheme'
 import Theme from '../constants/Theme'
-import { RootStackParamList } from '../types'
+import { RootStackParamList } from '../@types'
 import ModalScreen from '../screens/ModalScreen'
 import NotFoundScreen from '../screens/NotFoundScreen'
 import MaterialTopNavigator from './MaterialTopNavigator'

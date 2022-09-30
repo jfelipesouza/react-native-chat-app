@@ -3,10 +3,11 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { Ionicons } from '@expo/vector-icons'
 
 import TabOneScreen from '../screens/TabOneScreen'
-import { RootTabParamList } from '../types'
+import { RootTabParamList } from '../@types'
 import TabTwoScreen from '../screens/TabTwoScreen'
 import useColorScheme from '../hooks/useColorScheme'
 import Theme from '../constants/Theme'
+import ChatScreen from '../screens/ChatScreen'
 
 const { Navigator, Screen } = createMaterialTopTabNavigator<RootTabParamList>()
 
@@ -54,7 +55,7 @@ const MaterialTopNavigator = () => {
       />
       <Screen
         name="chats"
-        component={TabOneScreen}
+        component={ChatScreen}
         options={{
           title: 'Conversas'
         }}

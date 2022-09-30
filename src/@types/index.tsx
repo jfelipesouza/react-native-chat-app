@@ -4,6 +4,7 @@ import {
   NavigatorScreenParams
 } from '@react-navigation/native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
+export { ChatListItemProps, IChatListItem } from './components/chat-list-item'
 
 declare global {
   namespace ReactNavigation {

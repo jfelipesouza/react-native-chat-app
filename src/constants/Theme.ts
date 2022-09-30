@@ -1,7 +1,10 @@
 import { RFPercentage as Percent } from 'react-native-responsive-fontsize'
+import { Dimensions } from 'react-native'
 
 const tintColorLight = '#fff'
 const tintColorDark = '#f0e0d9'
+
+const { width } = Dimensions.get('window')
 
 export default {
   light: {
@@ -16,10 +19,17 @@ export default {
     tabIconSelected: tintColorLight,
     fontsize: {
       icons: Percent(3),
-      headerTitle: Percent(2.32)
+      headerTitle: Percent(2.2),
+      notFoundText: Percent(3),
+      notFoundIcon: Percent(13)
     },
     space: {
-      md: Percent(3)
+      md: Percent(3),
+      sm: Percent(2),
+      xs: Percent(1)
+    },
+    sizes: {
+      avatar: width * 0.5
     }
   },
   dark: {
@@ -34,10 +44,17 @@ export default {
     tabIconSelected: tintColorDark,
     fontsize: {
       icons: Percent(3),
-      headerTitle: Percent(2.32)
+      headerTitle: Percent(2.2),
+      notFoundText: Percent(3),
+      notFoundIcon: Percent(13)
     },
     space: {
-      md: Percent(3)
+      md: Percent(3),
+      sm: Percent(2),
+      xs: Percent(1)
+    },
+    sizes: {
+      avatar: width * 0.15
     }
   }
 }
