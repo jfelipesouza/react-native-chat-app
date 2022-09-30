@@ -4,11 +4,11 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons'
 import { View } from 'react-native'
 
 import useColorScheme from '../hooks/useColorScheme'
-import Colors from '../constants/Colors'
+import Theme from '../constants/Theme'
 import { RootStackParamList } from '../types'
-import BottomTabNavigator from './BottomTabNavigator'
 import ModalScreen from '../screens/ModalScreen'
 import NotFoundScreen from '../screens/NotFoundScreen'
+import MaterialTopNavigator from './MaterialTopNavigator'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
@@ -16,17 +16,18 @@ export default function RootNavigator() {
   const colorScheme = useColorScheme()
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: true }}>
+    <Stack.Navigator>
       <Stack.Screen
         name="Root"
-        component={BottomTabNavigator}
+        component={MaterialTopNavigator}
         options={{
           headerStyle: {
-            backgroundColor: Colors[colorScheme].primary
+            backgroundColor: Theme[colorScheme].primary
           },
+          headerShadowVisible: false,
           title: 'ChitChat',
           headerTitleStyle: {
-            color: Colors[colorScheme].headerColor,
+            color: Theme[colorScheme].headerColor,
             fontWeight: 'bold'
           },
           headerTitleAlign: 'left',
@@ -38,17 +39,17 @@ export default function RootNavigator() {
             >
               <Feather
                 name="search"
-                size={Colors[colorScheme].fontsize.icons}
-                color={Colors[colorScheme].headerColor}
+                size={Theme[colorScheme].fontsize.icons}
+                color={Theme[colorScheme].headerColor}
                 adjustsFontSizeToFit
                 style={{
-                  marginRight: Colors[colorScheme].space.md
+                  marginRight: Theme[colorScheme].space.md
                 }}
               />
               <MaterialCommunityIcons
                 name="dots-vertical"
-                size={Colors[colorScheme].fontsize.icons}
-                color={Colors[colorScheme].headerColor}
+                size={Theme[colorScheme].fontsize.icons}
+                color={Theme[colorScheme].headerColor}
                 adjustsFontSizeToFit
               />
             </View>
